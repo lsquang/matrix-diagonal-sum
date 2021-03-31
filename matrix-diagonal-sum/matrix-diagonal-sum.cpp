@@ -5,13 +5,13 @@ using namespace std;
 
 int diagonalSum(vector<vector<int>>& mat) {
     int sum = 0;
-    for (int i = 0; i != mat.size(); ++i) {
-        sum += mat[i][i];
+    for (int row = 0; row != mat.size(); ++row) {
+        sum += mat[row][row];
     }
 
-    for (int i = 0, j = mat[0].size() - 1; i != mat.size(); ++i, j--) {
-        if (i != j) {
-            sum += mat[i][j];
+    for (int row = 0,  col = mat[0].size() - 1; row != mat.size(); ++row, col--) {
+        if (row != col) {
+            sum += mat[row][col];
         }
     }
     return sum;
